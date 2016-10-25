@@ -126,6 +126,7 @@
 
   <modules>
     <module>sparking-travelbug-etl</module>
+    <module>sparking-travelbug-data</module>
   </modules>
 
 </project>
