@@ -71,7 +71,13 @@
         <artifactId>specs2-core_2.11</artifactId>
         <version>${specs2.version}</version>
         <scope>test</scope>
-      </dependency> 
+      </dependency>
+      <dependency>
+        <groupId>org.specs2</groupId>
+        <artifactId>specs2-junit_2.11</artifactId>
+        <version>${specs2.version}</version>
+        <scope>test</scope>
+      </dependency>
       <dependency>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest_2.11</artifactId>
@@ -96,13 +102,6 @@
               <goal>compile</goal>
               <goal>testCompile</goal>
             </goals>
-        <!--    <configuration>
-              <args>
-                <arg>-make:transitive</arg>
-                <arg>-dependencyfile</arg>
-                <arg>${project.build.directory}/.scala_dependencies</arg>
-              </args>
-            </configuration> -->
           </execution>
         </executions>
       </plugin>
@@ -113,11 +112,8 @@
         <configuration>
           <useFile>false</useFile>
           <disableXmlReport>true</disableXmlReport>
-          <!-- If you have classpath issue like NoDefClassError,... -->
-          <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
           <includes>
-            <include>**/*Test.*</include>
-            <include>**/*Suite.*</include>
+            <include>**/*Spec.*</include>
           </includes>
         </configuration>
       </plugin>
