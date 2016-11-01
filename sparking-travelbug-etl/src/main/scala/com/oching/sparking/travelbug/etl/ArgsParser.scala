@@ -14,26 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.oching.sparking.travelbug.etl
 
-import org.specs2.mutable.SpecificationWithJUnit
+import com.oching.sparking.travelbug.etl.util.EtlUtil
 
-class EtlUtilSpec extends SpecificationWithJUnit {
+trait ArgsParser {
 
-  "An etl-util" should {
+  // argument keys
+  final val JobSourceFile = "job.sourceFile"
+  final val JobOutputDir = "job.outputDir"
 
-    "parse an array of key value pairs into a map" in {
-      val args = Array[String]("job.hdfs.sourceFile=/tmp/source.txt", "job.hdfs.outputPath=/tmp/output/")
-      val mapConfig = EtlUtil.parse(args)
+  def parse(args: Array[String], expectedNumArgs: Int = 2) =
+    if (args.size != expectedNumArgs)
+      throw new Exception(s"Unexpected number of job parameters! Please provide the following params: " +
+        s"\n $JobSourceFile=/path/to/source/data $JobOutputDir=/path/to/output/directory")
+    else EtlUtil.parse(args)
 
-      mapConfig.size must_=== 2
-      mapConfig("job.hdfs.sourceFile") must_=== "/tmp/source.txt"
-      mapConfig("job.hdfs.outputPath") must_=== "/tmp/output/"
-    }
-
-    "return an empty map if the array is empty" in {
-      EtlUtil.parse(Array[String]()).isEmpty must_=== true
-    }
-  }
 }

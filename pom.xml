@@ -13,10 +13,12 @@
   <properties>
 
     <!-- PLUGIN dependencies -->
+    <maven.assembly.plugin.version>2.6</maven.assembly.plugin.version>
     <maven.scala.plugin.version>2.15.2</maven.scala.plugin.version> 
     <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
 
     <!-- CORE dependencies -->
+    <joda.time.version>2.9.4</joda.time.version>
     <scala.version>2.11.8</scala.version>
     <scalactic.version>3.0.0</scalactic.version>
     <spark.version>2.0.1</spark.version>
@@ -43,6 +45,7 @@
         <version>${scalactic.version}</version>
       </dependency>
 
+      <!-- Spark -->
       <dependency>
         <groupId>org.apache.spark</groupId>
         <artifactId>spark-core_2.11</artifactId>
@@ -57,6 +60,13 @@
         <groupId>org.apache.spark</groupId>
         <artifactId>spark-streaming_2.11</artifactId>
         <version>${spark.version}</version>
+      </dependency>
+
+      <!-- Other libraries -->
+      <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>${joda.time.version}</version>
       </dependency>
 
       <!-- TEST dependencies -->
@@ -105,6 +115,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -118,6 +129,17 @@
         </configuration>
       </plugin>
     </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${maven.assembly.plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
   </build>
 
   <modules>

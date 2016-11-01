@@ -14,12 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.oching.sparking.travelbug.etl
+package com.oching.sparking.travelbug.etl.util
 
 object EtlUtil {
 
-  def parse(args: Array[String]) =
-    args.map(_.split('=')).map(x => (x(0), x(1))).toMap
+  def parse(args: Array[String], keyValDelimiter: Char = '=') =
+    args.map(_.split(keyValDelimiter)).map(x => (x(0), x(1))).toMap
 
 }
