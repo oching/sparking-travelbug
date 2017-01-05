@@ -21,7 +21,7 @@
     <joda.time.version>2.9.4</joda.time.version>
     <scala.version>2.11.8</scala.version>
     <scalactic.version>3.0.0</scalactic.version>
-    <spark.version>2.0.1</spark.version>
+    <spark.version>2.1.0</spark.version>
 
     <!-- TEST dependencies -->
     <junit.version>4.12</junit.version>
