@@ -22,3 +22,9 @@ To build the project, just execute the following command:
 ```
 $ mvn clean install
 ```
+
+
+Running the Spark Jobs
+----------------------
+
+(In-progress..)

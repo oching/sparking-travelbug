@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -12,31 +11,17 @@
   </parent>
 
   <groupId>com.oching</groupId>
-  <artifactId>sparking-travelbug-etl</artifactId>
+  <artifactId>sparking-travelbug-ml</artifactId>
   <packaging>jar</packaging>
 
-  <name>Sparking Travelbug :: ETL</name>
-  <description>Module containing the Spark jobs for ETL (Extract-Transform-Load)</description>
+  <name>Sparking Travelbug :: ML</name>
+  <description>Module containing the Spark jobs for machine learning.</description>
 
   <dependencies>
 
     <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-core_2.11</artifactId>
-    </dependency> 
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-sql_2.11</artifactId>
-    </dependency>
-
-    <!-- TEST -->
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-junit_2.11</artifactId>
+      <artifactId>spark-mllib_2.11</artifactId>
     </dependency>
 
   </dependencies>
@@ -58,7 +43,7 @@
         </executions>
         <configuration>
           <descriptors>
-            <descriptor>src/main/assembly/sparking-travelbug-etl-assembly.xml</descriptor>
+            <descriptor>src/main/assembly/sparking-travelbug-ml-assembly.xml</descriptor>
           </descriptors>
         </configuration>
       </plugin>

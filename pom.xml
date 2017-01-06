@@ -61,6 +61,11 @@
         <artifactId>spark-streaming_2.11</artifactId>
         <version>${spark.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-mllib_2.11</artifactId>
+        <version>${spark.version}</version>
+      </dependency>
 
       <!-- Other libraries -->
       <dependency>
@@ -145,6 +150,7 @@
   <modules>
     <module>sparking-travelbug-etl</module>
     <module>sparking-travelbug-data</module>
+    <module>sparking-travelbug-ml</module>
   </modules>
 
 </project>
