@@ -33,6 +33,18 @@
   <dependencyManagement>
     <dependencies>
 
+      <!-- Project modules -->
+      <dependency>
+        <groupId>com.oching</groupId>
+        <artifactId>sparking-travelbug-etl</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oching</groupId>
+        <artifactId>sparking-travelbug-ml</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
       <!-- Scala -->
       <dependency>
         <groupId>org.scala-lang</groupId>
@@ -151,6 +163,7 @@
     <module>sparking-travelbug-etl</module>
     <module>sparking-travelbug-data</module>
     <module>sparking-travelbug-ml</module>
+    <module>sparking-travelbug-its</module>
   </modules>
 
 </project>
